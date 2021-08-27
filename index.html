@@ -3,7 +3,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Alliance Dashboard</title>
+        <title>Dashboard</title>
         <link rel="stylesheet" type="text/css" href="semantic.css" />
         <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
         <script src="semantic.js"></script>
@@ -11,15 +11,19 @@
     </head>
     <body>
         <div id="content">
-            <h1>Alliance Dashboard</h1>
-            <p>BDC Alliance 웹 페이지의 Alliance 정보를 추가/삭제/편집하기 위한 도구입니다.</p>
+            <h1>Dashboard</h1>
+            <p>BDC Alliance 웹 페이지의 정보를 추가/삭제/편집하기 위한 도구입니다.</p>
             <div class="ui negative message">
                 <div class="header">이 도구의 링크를 외부에 공개하지 마세요.</div>
-                <p>이 링크는 추가적인 보안조치가 없기 때문에 링크만 있다면 누구든 alliance 정보를 변경할 수 있습니다.</p>
+                <p>이 링크는 추가적인 보안조치가 없기 때문에 링크만 있다면 누구든 정보를 변경할 수 있습니다.</p>
             </div>
 
-            <h2>아래 순서로 위에서 아래, 왼쪽에서 오른쪽으로 표시됩니다.</h2>
-            <p>아래 정보를 편집하신 후 하단의 저장하기 버튼을 눌러주세요!</p>
+            <h2>Alliance</h2>
+            <p>아래 순서로 위에서 아래, 왼쪽에서 오른쪽으로 표시됩니다. 정보를 편집하신 후 하단의 저장하기 버튼을 눌러주세요!</p>
+            <div class="ui negative message">
+                <div class="header">저장하기 버튼에 주의해주세요.</div>
+                <p>빈 파일에서 저장할 경우 alliance 정보가 모두 지워질 수 있습니다.</p>
+            </div>
             <div class="ui warning message">
                 <div class="header">불러오기 버튼에 주의해주세요.</div>
                 <p>편집 중인 정보가 삭제된 후 불러와집니다.</p>
@@ -29,6 +33,22 @@
             <button class="ui primary button" onclick="save()">저장하기</button>
 
             <div class="ui segments" id="alliance"></div>
+
+            <h2>People</h2>
+            <p>아래 순서로 위에서 아래, 왼쪽에서 오른쪽으로 표시됩니다. 정보를 편집하신 후 하단의 저장하기 버튼을 눌러주세요!</p>
+            <div class="ui negative message">
+                <div class="header">저장하기 버튼에 주의해주세요.</div>
+                <p>빈 파일에서 저장할 경우 people 정보가 모두 지워질 수 있습니다.</p>
+            </div>
+            <div class="ui warning message">
+                <div class="header">불러오기 버튼에 주의해주세요.</div>
+                <p>편집 중인 정보가 삭제된 후 불러와집니다.</p>
+            </div>
+
+            <button class="ui primary button" onclick="loadPeople()">불러오기</button>
+            <button class="ui primary button" onclick="savePeople()">저장하기</button>
+
+            <div class="ui segments" id="people"></div>
         </div>
         <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
